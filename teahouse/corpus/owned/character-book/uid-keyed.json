@@ -1,0 +1,34 @@
+{
+    "name": "Uid-keyed book",
+    "entries": [
+        {
+            "uid": 0,
+            "keys": [
+                "warden"
+            ],
+            "secondary_keys": [],
+            "comment": "Wardens",
+            "content": "Wardens carry a stamped badge and swear a public oath on appointment. Their authority ends at the river.",
+            "constant": false,
+            "selective": true,
+            "insertion_order": 100,
+            "enabled": true,
+            "position": "before_char",
+            "extensions": {}
+        },
+        {
+            "uid": 1,
+            "keys": [
+                "kettle house"
+            ],
+            "secondary_keys": [],
+            "comment": "Kettle House",
+            "content": "The Kettle House is a two-room teahouse with no sign. You are expected to know where it is.",
+            "constant": true,
+            "selective": false,
+            "insertion_order": 20,
+            "enabled": true,
+            "position": "after_char"
+        }
+    ]
+}

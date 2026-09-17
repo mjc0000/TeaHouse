@@ -1,0 +1,30 @@
+[package]
+name = "teahouse-desktop"
+version = "0.12.0"
+description = "Desktop shell for the teahouse roleplay frontend"
+edition = "2021"
+
+[features]
+# Build a console-subsystem executable, so a terminal window shows alongside the
+# app. The default release build is a windowed app with no console.
+console = []
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-single-instance = "2"
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+ureq = { version = "2", features = ["json"] }
+zip = "2"
+sha2 = "0.10"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

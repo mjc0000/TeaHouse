@@ -1,0 +1,41 @@
+{
+    "lorebookVersion": 6,
+    "name": "Glass Coast",
+    "entries": [
+        {
+            "keys": [
+                "lantern district"
+            ],
+            "displayName": "Lantern District",
+            "text": "The Lantern District is the old merchant quarter. Every doorway carries a paper lantern; at dusk they are lit in order from the river inward.",
+            "enabled": true,
+            "contextConfig": {
+                "budgetPriority": 110,
+                "prefix": "",
+                "suffix": "\n"
+            }
+        },
+        {
+            "keys": [
+                "tide bell"
+            ],
+            "displayName": "Tide Bell",
+            "text": "A bronze bell on the sea wall. It rings twice a day; a third ring means the water is coming over the wall.",
+            "enabled": true,
+            "contextConfig": {
+                "budgetPriority": 95
+            }
+        },
+        {
+            "keys": [
+                "deprecated"
+            ],
+            "displayName": "Retired entry",
+            "text": "Kept for reference and disabled.",
+            "enabled": false,
+            "contextConfig": {
+                "budgetPriority": 10
+            }
+        }
+    ]
+}

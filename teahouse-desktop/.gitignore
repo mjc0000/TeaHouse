@@ -1,0 +1,12 @@
+# Build output
+target/
+src-tauri/gen/schemas/
+
+# Local runtime and release payload (put node.exe / the source copy there when packaging)
+src-tauri/resources/runtime/node.exe
+src-tauri/resources/app/src/
+src-tauri/resources/app/web/
+
+# Windows
+Thumbs.db
+desktop.ini

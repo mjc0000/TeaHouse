@@ -1,0 +1,24 @@
+[
+    {
+        "uid": 0,
+        "key": [
+            "lantern district"
+        ],
+        "comment": "Lantern District",
+        "content": "The Lantern District is the old merchant quarter. Every doorway carries a paper lantern; at dusk they are lit in order from the river inward.",
+        "order": 100,
+        "position": 0,
+        "disable": false
+    },
+    {
+        "uid": 1,
+        "key": [
+            "ashfall"
+        ],
+        "comment": "Ashfall",
+        "content": "Ashfall is what the locals call the grey snow that falls after a burn. It is warm to the touch for the first hour.",
+        "order": 50,
+        "position": 1,
+        "disable": false
+    }
+]

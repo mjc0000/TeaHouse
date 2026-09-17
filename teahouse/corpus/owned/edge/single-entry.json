@@ -1,0 +1,15 @@
+{
+    "entries": {
+        "0": {
+            "uid": 0,
+            "key": [
+                "osk"
+            ],
+            "comment": "Osk",
+            "content": "The harbourmaster is a wide, patient woman named Osk. She has never once raised her voice and has never once been disobeyed.",
+            "order": 100,
+            "position": 0,
+            "disable": false
+        }
+    }
+}

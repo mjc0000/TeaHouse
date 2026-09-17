@@ -1,0 +1,34 @@
+{
+    "kind": "memory",
+    "entries": [
+        {
+            "keywords": [
+                "lantern",
+                "lantern district"
+            ],
+            "name": "Lantern District",
+            "entry": "The Lantern District is the old merchant quarter. Every doorway carries a paper lantern; at dusk they are lit in order from the river inward.",
+            "enabled": true,
+            "weight": 120
+        },
+        {
+            "keywords": [
+                "harbourmaster",
+                "osk"
+            ],
+            "name": "The Harbourmaster",
+            "entry": "The harbourmaster is a wide, patient woman named Osk. She has never once raised her voice and has never once been disobeyed.",
+            "enabled": true,
+            "weight": 100
+        },
+        {
+            "keywords": [
+                "tide bell"
+            ],
+            "name": "Tide Bell",
+            "entry": "A bronze bell on the sea wall. It rings twice a day; a third ring means the water is coming over the wall.",
+            "enabled": false,
+            "weight": 80
+        }
+    ]
+}

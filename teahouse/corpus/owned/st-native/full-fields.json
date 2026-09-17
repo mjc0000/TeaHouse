@@ -1,0 +1,135 @@
+{
+    "entries": {
+        "0": {
+            "uid": 0,
+            "key": [
+                "lantern district",
+                "the district"
+            ],
+            "keysecondary": [
+                "river",
+                "quarter"
+            ],
+            "comment": "Lantern District",
+            "content": "The Lantern District is the old merchant quarter. Every doorway carries a paper lantern; at dusk they are lit in order from the river inward.",
+            "constant": false,
+            "selective": true,
+            "selectiveLogic": 0,
+            "addMemo": true,
+            "order": 100,
+            "position": 0,
+            "disable": false,
+            "ignoreBudget": false,
+            "excludeRecursion": false,
+            "preventRecursion": false,
+            "matchPersonaDescription": false,
+            "matchCharacterDescription": false,
+            "matchCharacterPersonality": false,
+            "matchCharacterDepthPrompt": false,
+            "matchScenario": false,
+            "matchCreatorNotes": false,
+            "delayUntilRecursion": 0,
+            "probability": 100,
+            "useProbability": true,
+            "depth": 4,
+            "outletName": "",
+            "group": "",
+            "groupOverride": false,
+            "groupWeight": 100,
+            "scanDepth": null,
+            "caseSensitive": null,
+            "matchWholeWords": null,
+            "useGroupScoring": null,
+            "automationId": "",
+            "role": 0,
+            "sticky": null,
+            "cooldown": null,
+            "delay": null,
+            "vectorized": false,
+            "triggers": [],
+            "displayIndex": 0,
+            "extensions": {},
+            "myCustomField": {
+                "nested": [
+                    1,
+                    2,
+                    3
+                ],
+                "flag": true
+            }
+        },
+        "1": {
+            "uid": 1,
+            "key": [
+                "harbourmaster",
+                "harbour office"
+            ],
+            "keysecondary": [],
+            "comment": "The Harbourmaster",
+            "content": "The harbourmaster is a wide, patient woman named Osk. She has never once raised her voice and has never once been disobeyed.",
+            "constant": false,
+            "selective": true,
+            "selectiveLogic": 0,
+            "order": 200,
+            "position": 1,
+            "disable": false,
+            "probability": 100,
+            "useProbability": true,
+            "depth": 4,
+            "role": 1,
+            "group": "dockfolk",
+            "groupWeight": 150,
+            "sticky": 3,
+            "cooldown": 2,
+            "delay": 1,
+            "triggers": [
+                "normal",
+                "continue"
+            ],
+            "extensions": {
+                "source": "fixture"
+            },
+            "anotherCustom": "kept verbatim"
+        },
+        "2": {
+            "uid": 2,
+            "comment": "Tide Bell (disabled)",
+            "content": "A bronze bell on the sea wall. It rings twice a day; a third ring means the water is coming over the wall.",
+            "disable": true,
+            "key": [
+                "tide bell"
+            ],
+            "keysecondary": [],
+            "order": 50,
+            "position": 0,
+            "constant": false,
+            "selective": true,
+            "vectorized": true,
+            "automationId": "bell",
+            "outletName": "ambient",
+            "caseSensitive": true,
+            "matchWholeWords": true,
+            "ignoreBudget": true,
+            "extensions": {}
+        },
+        "3": {
+            "uid": 3,
+            "comment": "Ashfall (probabilistic)",
+            "content": "Ashfall is what the locals call the grey snow that falls after a burn. It is warm to the touch for the first hour.",
+            "key": [
+                "ashfall"
+            ],
+            "keysecondary": [],
+            "order": 75,
+            "position": 1,
+            "constant": false,
+            "selective": true,
+            "probability": 50,
+            "useProbability": true,
+            "extensions": {}
+        }
+    },
+    "extensions": {
+        "fixture": "full-fields"
+    }
+}

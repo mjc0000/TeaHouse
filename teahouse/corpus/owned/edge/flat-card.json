@@ -1,0 +1,32 @@
+{
+    "spec": "chara_card_v2",
+    "spec_version": "2.0",
+    "name": "Flat Osk",
+    "description": "A card that declares a spec but never nests its data.",
+    "personality": "Terse.",
+    "scenario": "The sea wall.",
+    "first_mes": "*She nods.*",
+    "mes_example": "<START>\n{{user}}: Hello.\n{{char}}: *A nod.*",
+    "creator_notes": "Generated malformed-card fixture.",
+    "tags": [
+        "fixture"
+    ],
+    "creator": "teahouse fixtures",
+    "character_version": "1.0",
+    "character_book": {
+        "name": "Flat book",
+        "extensions": {},
+        "entries": [
+            {
+                "keys": [
+                    "tide bell"
+                ],
+                "content": "A bronze bell on the sea wall. It rings twice a day; a third ring means the water is coming over the wall.",
+                "enabled": true,
+                "insertion_order": 100,
+                "position": "before_char",
+                "extensions": {}
+            }
+        ]
+    }
+}

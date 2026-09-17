@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <title>teahouse 启动失败</title>
+    <style>
+      :root { color-scheme: dark; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #14161a;
+        color: #dfe3ea;
+        font: 14px/1.7 system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      main { max-width: 560px; padding: 32px; }
+      h1 { font-size: 18px; margin: 0 0 12px; }
+      p { color: #8b93a3; margin: 0 0 10px; }
+      code {
+        background: #22262e;
+        border: 1px solid #2e333d;
+        border-radius: 4px;
+        padding: 1px 6px;
+        color: #a9c2f0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>teahouse 服务端没有起来</h1>
+      <p>壳已经尝试启动本地服务，但 25 秒内没有等到它响应。常见原因：Node 运行时不可用，或源码目录不完整。</p>
+      <p>日志在 <code>%APPDATA%\teahouse\logs\server.log</code>，里面会有具体报错。</p>
+      <p>数据与源码分别在 <code>%APPDATA%\teahouse\data</code> 和 <code>%APPDATA%\teahouse\app</code>。</p>
+      <p>修好之后，重新打开 teahouse 即可。</p>
+    </main>
+  </body>
+</html>

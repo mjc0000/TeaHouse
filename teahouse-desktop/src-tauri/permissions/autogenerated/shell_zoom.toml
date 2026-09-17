@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-shell-zoom"
+description = "Enables the shell_zoom command without any pre-configured scope."
+commands.allow = ["shell_zoom"]
+
+[[permission]]
+identifier = "deny-shell-zoom"
+description = "Denies the shell_zoom command without any pre-configured scope."
+commands.deny = ["shell_zoom"]

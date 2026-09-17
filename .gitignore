@@ -1,0 +1,4 @@
+# Release installers ship via GitHub Releases, not git.
+teahouse-desktop/*.exe
+# Internal ops handoff (local paths, machine-specific workflow): never publish.
+teahouse/HANDOFF.md

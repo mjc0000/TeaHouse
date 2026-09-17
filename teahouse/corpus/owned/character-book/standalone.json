@@ -1,0 +1,68 @@
+{
+    "name": "Lantern District Book",
+    "description": "CharacterBook shape, standalone file.",
+    "scan_depth": 4,
+    "token_budget": 800,
+    "recursive_scanning": false,
+    "extensions": {
+        "fixture": "standalone"
+    },
+    "entries": [
+        {
+            "id": 0,
+            "keys": [
+                "lantern district",
+                "district"
+            ],
+            "secondary_keys": [
+                "river"
+            ],
+            "comment": "Lantern District",
+            "content": "The Lantern District is the old merchant quarter. Every doorway carries a paper lantern; at dusk they are lit in order from the river inward.",
+            "constant": false,
+            "selective": true,
+            "insertion_order": 100,
+            "enabled": true,
+            "position": "before_char",
+            "use_regex": true,
+            "extensions": {
+                "position": 0,
+                "depth": 4,
+                "probability": 100,
+                "useProbability": true,
+                "selectiveLogic": 0,
+                "group": "",
+                "group_weight": 100,
+                "scan_depth": null,
+                "case_sensitive": false,
+                "match_whole_words": false,
+                "exclude_recursion": false,
+                "prevent_recursion": false,
+                "delay_until_recursion": false,
+                "display_index": 0,
+                "role": 0,
+                "automation_id": ""
+            },
+            "custom_note": "preserved even though nothing reads it"
+        },
+        {
+            "id": 1,
+            "keys": [
+                "ashfall"
+            ],
+            "secondary_keys": [],
+            "comment": "Ashfall",
+            "content": "Ashfall is what the locals call the grey snow that falls after a burn. It is warm to the touch for the first hour.",
+            "constant": false,
+            "selective": false,
+            "insertion_order": 50,
+            "enabled": false,
+            "position": "after_char",
+            "extensions": {
+                "position": 3,
+                "depth": 2,
+                "role": 2
+            }
+        }
+    ]
+}

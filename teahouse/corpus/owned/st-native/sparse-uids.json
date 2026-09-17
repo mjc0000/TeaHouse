@@ -1,0 +1,23 @@
+{
+    "entries": {
+        "5": {
+            "uid": 5,
+            "key": [
+                "kettle house"
+            ],
+            "content": "The Kettle House is a two-room teahouse with no sign. You are expected to know where it is.",
+            "comment": "Kettle House",
+            "order": 300
+        },
+        "9": {
+            "uid": 9,
+            "key": [
+                "warden",
+                "wardens"
+            ],
+            "content": "Wardens carry a stamped badge and swear a public oath on appointment. Their authority ends at the river.",
+            "comment": "Wardens",
+            "order": 10
+        }
+    }
+}

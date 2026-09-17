@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>teahouse</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <!-- Before the first paint: a chosen theme must not flash the other one. -->
+    <script src="/js/theme-boot.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <button id="brand-menu" class="brand menu-button" aria-haspopup="menu" data-i18n-title="app.brandTitle"><img class="brand-logo" src="/logo.svg" alt="" width="18" height="18" />teahouse ▾</button>
+      <span id="model-picker" class="model-picker-slot"></span>
+      <span id="connection-status" class="connection-status-slot"></span>
+      <span class="spacer"></span>
+      <button
+        id="btn-toggle-left"
+        class="ghost icon-button panel-toggle"
+        aria-pressed="true"
+        data-i18n-title="app.toggleLeftTitle"
+      >◧</button>
+      <button
+        id="btn-toggle-right"
+        class="ghost icon-button panel-toggle"
+        aria-pressed="true"
+        data-i18n-title="app.toggleRightTitle"
+      >◨</button>
+      <span class="topbar-sep"></span>
+      <button id="btn-trace" class="ghost" aria-pressed="false" data-i18n-title="app.traceTitle" data-i18n="app.trace">轨迹</button>
+      <button id="btn-preview" class="ghost" data-i18n="app.preview">装配预览</button>
+      <button id="btn-settings" class="ghost" data-i18n="settings.title">设置</button>
+    </header>
+
+    <main class="layout">
+      <!-- ------------------------------------------------------------------ -->
+      <aside class="panel panel-left">
+        <section class="block">
+          <h2 data-i18n="panels.characters">角色</h2>
+          <div class="row">
+            <label class="file-button">
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M8 8l4-4 4 4M5 19.5h14" /></svg>
+              <span data-i18n="app.importCharacter">导入角色卡</span>
+              <input id="import-character" type="file" accept=".png,.json,.md,.markdown,.txt,.zip" hidden />
+            </label>
+          </div>
+          <ul id="character-list" class="list"></ul>
+        </section>
+
+        <section class="block">
+          <h2 data-i18n="panels.worlds">世界书</h2>
+          <div class="row">
+            <label class="file-button">
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M8 8l4-4 4 4M5 19.5h14" /></svg>
+              <span data-i18n="app.importWorld">导入世界书</span>
+              <input id="import-world" type="file" accept=".json,.png" hidden />
+            </label>
+          </div>
+          <ul id="world-list" class="list"></ul>
+          <p class="hint" data-i18n="panels.worldsHint">勾选的世界书会附加到当前会话；角色卡内嵌的世界书自动生效。</p>
+        </section>
+
+        <section class="block">
+          <h2 data-i18n="panels.chats">会话</h2>
+          <div class="row">
+            <button id="btn-new-chat" class="primary" data-i18n="app.newChat">新会话</button>
+            <button id="btn-delete-chat" class="ghost danger" data-i18n="common.delete">删除</button>
+            <label class="file-button">
+              <span data-i18n="app.importChat">导入记录</span>
+              <input id="import-chat" type="file" accept=".jsonl,.json,.txt" hidden />
+            </label>
+          </div>
+          <ul id="chat-list" class="list"></ul>
+          <p class="hint" data-i18n="panels.chatsHint">会话可以按酒馆的 jsonl 导出（列表项的 ⋯ 菜单）与导入。</p>
+        </section>
+      </aside>
+
+      <div
+        class="resizer resizer-left"
+        role="separator"
+        aria-orientation="vertical"
+        data-i18n-aria-label="app.resizeLeft"
+        tabindex="0"
+      ></div>
+
+      <!-- ------------------------------------------------------------------ -->
+      <section class="panel panel-center">
+        <div id="chat-backdrop" class="chat-backdrop hidden" aria-hidden="true"></div>
+        <div id="chat-header" class="chat-header">
+          <span id="chat-title" class="muted" data-i18n="chat.none">未选择会话</span>
+          <span id="chat-stats" class="muted small"></span>
+        </div>
+
+        <div id="messages" class="messages"></div>
+
+        <div class="composer">
+          <div id="quick-replies" class="quick-bar empty"></div>
+          <div id="pending-images" class="pending-images hidden"></div>
+          <textarea id="input" rows="3" data-i18n-placeholder="chat.inputPlaceholder" placeholder="说点什么…（Ctrl+Enter 发送）"></textarea>
+          <div class="composer-actions">
+            <button id="btn-send" class="primary" data-i18n="app.send">发送</button>
+            <label id="btn-attach" class="file-button" data-i18n-title="app.attachTitle">📎
+              <input id="attach-input" type="file" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+            </label>
+            <button id="btn-regen" class="ghost" data-i18n="app.regen">重新生成</button>
+            <button id="btn-continue" class="ghost" data-i18n-title="app.continueTitle" data-i18n="app.continue">继续</button>
+            <button id="btn-impersonate" class="ghost" data-i18n-title="app.impersonateTitle" data-i18n="app.impersonate">替我说</button>
+            <button id="btn-stop" class="ghost danger" disabled data-i18n="app.stop">停止</button>
+            <span id="stream-status" class="muted small"></span>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="resizer resizer-right"
+        role="separator"
+        aria-orientation="vertical"
+        data-i18n-aria-label="app.resizeRight"
+        tabindex="0"
+      ></div>
+
+      <!-- ------------------------------------------------------------------ -->
+      <aside class="panel panel-right">
+        <!-- The trajectory: this column's other mode, so it is a sibling of the
+             prompt panel rather than one more block inside it. -->
+        <div id="trace" class="trace"></div>
+
+        <div id="right-prompt" class="right-prompt">
+          <div id="token-budget" class="budget-holder"></div>
+
+          <section class="block" id="sprite-block">
+            <h2 data-i18n="panels.sprites">立绘</h2>
+            <div id="sprite" class="sprite-holder"></div>
+          </section>
+
+          <section class="block">
+            <h2 data-i18n="panels.params">请求参数</h2>
+            <p class="hint" data-i18n="panels.paramsHint">本会话的采样参数；新建会话时按设置里的默认值快照。</p>
+            <div id="chat-params" class="params-holder"></div>
+          </section>
+
+          <section class="block">
+            <h2 data-i18n="panels.stack">提示词栈</h2>
+            <p class="hint" data-i18n="panels.stackHint">按分组折叠；行内的开关可启停，改动真实生效并记住。</p>
+            <div id="prompt-stack" class="stack-groups"></div>
+          </section>
+
+          <section class="block">
+            <h2 data-i18n="panels.hits">世界书命中</h2>
+            <div id="world-hits" class="hits"></div>
+          </section>
+
+          <section class="block">
+            <h2 data-i18n="panels.preview">请求预览</h2>
+            <div id="preview" class="preview"></div>
+          </section>
+        </div>
+      </aside>
+    </main>
+
+    <!--
+      Dialogs (the world book editor and the settings dialog) are built entirely
+      by their views and attach themselves to <body>; they have no markup here.
+    -->
+
+    <!-- Applies the chosen interface language while the shell is still parsing,
+         so the topbar never flashes the wrong language. -->
+    <script src="/js/i18n-boot.js"></script>
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

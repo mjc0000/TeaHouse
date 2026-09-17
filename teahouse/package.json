@@ -1,0 +1,26 @@
+{
+  "name": "teahouse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal local roleplay frontend: character cards, world books, prompt stack",
+  "type": "module",
+  "engines": {
+    "node": ">=23"
+  },
+  "scripts": {
+    "start": "node src/server.ts",
+    "fixtures": "node scripts/make-fixtures.ts",
+    "seed": "node scripts/seed.ts",
+    "test": "node scripts/conformance.ts && node scripts/test-scan.ts && node scripts/test-prompt.ts && node scripts/test-tokenizer.ts && node scripts/test-api.ts && node scripts/test-web.ts && node scripts/test-ui.ts && node scripts/test-boot.ts",
+    "test:conformance": "node scripts/conformance.ts",
+    "test:scan": "node scripts/test-scan.ts",
+    "test:prompt": "node scripts/test-prompt.ts",
+    "test:tokenizer": "node scripts/test-tokenizer.ts",
+    "test:api": "node scripts/test-api.ts",
+    "test:web": "node scripts/test-web.ts",
+    "test:ui": "node scripts/test-ui.ts",
+    "test:boot": "node scripts/test-boot.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
